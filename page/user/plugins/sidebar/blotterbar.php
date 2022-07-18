@@ -24,7 +24,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                <li class="nav-item">
-            <a href="dashboard.php" class="nav-link active">
+            <a href="dashboard.php" class="nav-link ">
               <i class="fas fa-bullhorn"></i>
               <p>
                 Announcement
@@ -33,26 +33,18 @@
             </a>
           </li>
             <li class="nav-item">
-            <a href="resident.php" class="nav-link">
+            <a href="send.php" class="nav-link">
               <i class="  fa fa-file-alt"></i>
               <p>
-                Residents Details
+                Send Documents
               </p>
             </a>
           </li>
             <li class="nav-item">
-            <a href="blotter.php" class="nav-link">
-              <i class="fas fa-edit"></i>
+            <a href="blotter.php" class="nav-link active">
+              <i class="fas fa-list"></i>
               <p>
-                Blotter Details
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="accounts.php" class="nav-link">
-              <i class="fa fa-users"></i>
-              <p>
-               Account Management              
+                List of Blotter
               </p>
             </a>
           </li>

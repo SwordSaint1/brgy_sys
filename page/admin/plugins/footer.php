@@ -8,7 +8,14 @@
 <?php
 //MODALS
 include '../../modals/logout.php';
-
+include '../../modals/announcement/announcement.php';
+include '../../modals/announcement/update_announcement.php';
+include '../../modals/resident/add_resident.php';
+include '../../modals/resident/update_resident.php';
+include '../../modals/blotter/add_blotter.php';
+include '../../modals/blotter/update_blotter.php';
+include '../../modals/accounts/add_account.php';
+include '../../modals/accounts/update_account.php';
 ?>
 <!-- jQuery -->
 <!-- <script src="../../plugins/jquery/jquery.min.js"></script> -->

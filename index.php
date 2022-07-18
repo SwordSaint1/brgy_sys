@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>Barangay 184 Zone 19</title>
-
+    <link rel="icon" href="assets/img/Barangay184.png" type="image/x-icon" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
     <!-- Icon -->
@@ -21,8 +21,12 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <!-- Responsive Style -->
     <link rel="stylesheet" href="assets/css/responsive.css">
-
+    <link rel="stylesheet" href="assets/css/slideshow.css">
   </head>
+  <style>
+.mySlides {display:none;}
+   
+</style>
   <body>
 
     <!-- Header Area wrapper Starts -->
@@ -40,6 +44,11 @@
               <li class="nav-item active">
                 <a class="nav-link" href="#hero-area">
                   Home
+                </a>
+              </li>
+               <li class="nav-item">
+                <a class="nav-link" href="#announcement">
+                  Announcement
                 </a>
               </li>
                <li class="nav-item">
@@ -98,6 +107,50 @@
     </header>
     <!-- Header Area wrapper End -->
 
+     <!--Announcement Start -->
+    <section id="announcement" class="section-padding bg-gray">
+      <div class="container">
+        <div class="section-header text-center">          
+          <h2 class="section-title wow fadeInDown" data-wow-delay="0.3s">Announcement</h2>
+          <div class="shape wow fadeInDown" data-wow-delay="0.3s"></div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-xs-12">
+            <!-- Team Item Starts -->
+            <div class="team-item wow fadeInRight" data-wow-delay="0.2s">
+              <div class="team-img">
+                <!-- <img class="img-fluid" src="assets/img/brgysec.png" alt=""> -->
+              </div>
+              <div class="content">
+                <div class="info-text">
+                  <div class="row" style="overflow-y: scroll; height: 500px;" >
+                      <?php 
+            require 'process/conn.php';
+            $query ="SELECT * FROM announcement GROUP BY id ORDER BY id DESC";
+            $stmt = $conn->prepare($query);
+            $stmt->execute();
+            foreach($stmt->fetchALL() as $j){
+             echo'<div class="col-lg-12 col-md-12 col-xs-12">
+              <p style="text-align:center;"> <img src="process/admin/'.$j['image'].'" style="width:50%; height:50%;"></p>
+               <h2 id="date_created'.$j['id'].'" style="text-align:center; color:red;">'.$j['date_announce'].'</h2>
+                  <h2 id="content'.$j['id'].'" style="text-align:center;">'.$j['announcement_description'].' 
+                  </h2>
+              <hr>
+            </div>';
+            }
+            ?>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </section>
+ <!-- Announcement Ends -->
+
+
     <!-- Mission & Vision Start -->
     <section id="mission" class="section-padding bg-gray">
       <div class="container">
@@ -148,7 +201,6 @@
           </div>
       </div>
     </section>
-
     <!-- Mission & Vision End -->
 
     <!-- Services Section Start -->
@@ -423,6 +475,26 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/form-validator.min.js"></script>
     <script src="assets/js/contact-form-script.min.js"></script>
+
+    <script type="text/javascript">
+      var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+    </script>
       
   </body>
 </html>

@@ -1,5 +1,5 @@
 <?php include 'plugins/navbar.php';?>
-<?php include 'plugins/sidebar/residentbar.php';?>
+<?php include 'plugins/sidebar/blotterbar.php';?>
   <!-- Main Sidebar Container -->
 
  <!-- Content Wrapper. Contains page content -->
@@ -9,18 +9,18 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Resident List</h1>
+            <h1 class="m-0">Blotter List</h1>
             <br>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-              <li class="breadcrumb-item active">Resident List</li>
+              <li class="breadcrumb-item active">Blotter List</li>
             </ol>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-left">
-              <a href="#" class="btn btn-secondary modal-trigger" data-toggle="modal" data-target="#add_resident">Add Resident</a>
+              <a href="#" class="btn btn-secondary modal-trigger" data-toggle="modal" data-target="#add_blotter">Add Blotter</a>
             </ol>
           </div>
         </div><!-- /.row -->
@@ -45,12 +45,15 @@
                 <div class="card-body">
 
                   <div class="row">
-                     <div class="col-3">
-                      <label>Name:</label><input type="text" name="" id="names" class="form-control">
-                    </div>        
-                     <div class="col-9">
+                     <div class="col-4">
+                      <label>Date From:</label><input type="date" name="" id="recorded_date_from" class="form-control" value="<?=$server_date_only;?>">
+                    </div>
+                     <div class="col-4">
+                      <label>Date To:</label><input type="date" name="" id="recorded_date_to" class="form-control" value="<?=$server_date_only;?>">
+                    </div>      
+                     <div class="col-4">
                       <span style="visibility:hidden;">.</span>
-                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="search_resident()">Search <i class="fa fa-search"></a></i></p>
+                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="search_blotter()">Search <i class="fa fa-search"></a></i></p>
                     </div>
                   </div>
               
@@ -62,20 +65,18 @@
                   <div class="row">
                     <div class="col-12">
                        <div class="card-body table-responsive p-0" style="height: 420px;">
-                <table class="table table-head-fixed text-nowrap table-hover" id="resident_list">
+                <table class="table table-head-fixed text-nowrap table-hover" id="blotter_list">
                 <thead style="text-align:center;">
                     <th>#</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Date of Birth</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Civil Status</th>
-                    <th>Citizenship</th>
-                    <th>Occupation</th>
-                    <th>Register Voters</th>
+                    <th>Date Recorded</th>
+                    <th>Complainant</th>
+                    <th>Person to Complaint</th>
+                    <th>Complaint</th>
+                    <th>Action Taken</th>
+                    <th>Status</th>
+                    <th>Location of Incedence</th>
             </thead>
-            <tbody id="list_of_resident" style="text-align:center;"></tbody>
+            <tbody id="list_of_blotter" style="text-align:center;"></tbody>
                 </table>
               </div>
                     </div>
@@ -97,4 +98,4 @@
 </div>
 
 <?php include 'plugins/footer.php';?>
-<?php include 'plugins/javascript/resident_script.php';?>
+<?php include 'plugins/javascript/blotter_script.php';?>
