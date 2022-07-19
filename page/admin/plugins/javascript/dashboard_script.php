@@ -20,7 +20,7 @@ const search_announcement =()=>{
 } 
 
 const get_announcement_details =(param)=>{
-    console.log(param);
+
     var string = param.split('~!~');
     var id = string[0];
     var file_name = string[1];
@@ -32,7 +32,7 @@ const get_announcement_details =(param)=>{
 document.getElementById('id_announcement_update').value = id;
 
 
-$('#preview_docs').attr('href',file)
+$('#preview_announce_img').attr('src',image)
 
 document.getElementById('description_announcement_update').value = announcement_description;
 document.getElementById('date_announce_update').value = date_announce;

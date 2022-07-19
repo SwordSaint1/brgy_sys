@@ -13,6 +13,31 @@
             <div class="col-4">
               <label>Email:</label> <input type="email" name="email_accounts" id="email_accounts" class="form-control" autocomplete="off">
             </div>
+             <div class="col-4">
+              <label>Password:</label> <input type="password" name="password_accounts" id="password_accounts" class="form-control" autocomplete="off">
+            </div>
+           
+            <div class="col-4">
+              <label>Full Name:</label>
+              <input type="text" name="full_name_accounts" id="full_name_accounts" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label>Address:</label>
+              <input type="text" name="address_accounts" id="address_accounts" class="form-control">
+          </div>
+           <div class="col-4">
+              <label>Phone No:</label> <input type="number" name="phone_no_accounts" id="phone_no_accounts" class="form-control" onkeypress="return event.charCode >= 48" min="1">
+          </div>
+           <div class="col-4">
+                <label>Role:</label>
+             <select id="role_accounts" class="form-control">
+               <option value="">Select Role</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+             </select>
+          </div>
         </div>
       </div>
       <div class="modal-footer">

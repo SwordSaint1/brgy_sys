@@ -26,7 +26,7 @@ if ($method == 'fetch_pending_docs') {
 		}
 	}else{
 			echo '<tr>';
-				echo '<td colspan="5" style="color:red;">No Result!</td>';
+				echo '<td colspan="6" style="color:red;">No Result!</td>';
 			echo '</tr>';
 	}
 }

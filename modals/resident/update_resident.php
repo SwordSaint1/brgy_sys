@@ -52,8 +52,13 @@
         </div>
 
          <div class="row">
-             <div class="col-3">
-            <label>Register Voters:</label> <input type="number" name="register_voters_update" id="register_voters_update" class="form-control" onkeypress="return event.charCode >= 48" min="1">
+             <div class="col-3"> 
+              <label>Voter Status:</label>
+            <select id="register_voters_update" class="form-control">
+              <option value="">Select Voter Status</option>
+              <option value="registered">Registered</option>
+              <option value="not_registered">Not Registered</option>
+            </select>
             </div>
            
         </div>
