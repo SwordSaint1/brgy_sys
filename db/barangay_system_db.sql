@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 18, 2022 at 12:27 PM
+-- Generation Time: Jul 19, 2022 at 06:38 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -104,15 +104,17 @@ CREATE TABLE `documents` (
   `date_sent` date DEFAULT NULL,
   `file` varchar(100) DEFAULT NULL,
   `send_by` varchar(50) DEFAULT NULL,
-  `status` varchar(15) DEFAULT 'pending'
+  `status` varchar(15) DEFAULT 'pending',
+  `date_recieved` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `documents`
 --
 
-INSERT INTO `documents` (`id`, `file_name`, `file_type`, `date_sent`, `file`, `send_by`, `status`) VALUES
-(1, 'UPLOAD-CV.PDF-20220718-665869-62d52d89d7fa0.pdf', 'barangay_clearance', '2022-07-18', 'upload/UPLOAD-CV.PDF-20220718-665869-62d52d89d7fa0.pdf', 'users', 'pending');
+INSERT INTO `documents` (`id`, `file_name`, `file_type`, `date_sent`, `file`, `send_by`, `status`, `date_recieved`) VALUES
+(1, 'UPLOAD-CV.PDF-20220718-665869-62d52d89d7fa0.pdf', 'barangay_clearance', '2022-07-18', 'upload/UPLOAD-CV.PDF-20220718-665869-62d52d89d7fa0.pdf', 'users', 'recieved', '2022-07-19'),
+(2, 'UPLOAD-TRY.PDF-20220719-633728-62d60f7e13e4d.pdf', 'certificate_of_indigency', '2022-07-19', 'upload/UPLOAD-TRY.PDF-20220719-633728-62d60f7e13e4d.pdf', 'users', 'recieved', '2022-07-19');
 
 -- --------------------------------------------------------
 
@@ -200,7 +202,7 @@ ALTER TABLE `blotter`
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `resident_details`
