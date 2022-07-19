@@ -17,7 +17,7 @@ const search_announcement =()=>{
                      
                 }
    });
-}
+} 
 
 const get_announcement_details =(param)=>{
     console.log(param);
@@ -32,7 +32,7 @@ const get_announcement_details =(param)=>{
 document.getElementById('id_announcement_update').value = id;
 
 
-$('#preview_announce_img').attr('src',image)
+$('#preview_docs').attr('href',file)
 
 document.getElementById('description_announcement_update').value = announcement_description;
 document.getElementById('date_announce_update').value = date_announce;

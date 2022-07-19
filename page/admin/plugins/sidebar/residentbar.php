@@ -48,6 +48,29 @@
               </p>
             </a>
           </li>
+            <li class="nav-item menu-close">
+            <a href="#" class="nav-link">
+              <i class="fas fa-file-pdf"></i>
+              <p>
+               Documents
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="docs.php" class="nav-link ">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Pending Documents</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="recieved.php" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>Recieved Documents</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li class="nav-item">
             <a href="accounts.php" class="nav-link">
               <i class="fa fa-users"></i>

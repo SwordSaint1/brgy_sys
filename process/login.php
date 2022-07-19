@@ -31,7 +31,16 @@
                 header('location: page/admin/dashboard.php');    
             }
         }else{
-            echo 'Wrong Username, Password or User type';
+            // echo 'Wrong Username or Password';
+     
+             echo '<script>
+                    var x = confirm("Wrong Username or Password!");
+                    if(x == true){
+                        location.replace("login.php");
+                    }else{
+                        location.replace("login.php");
+                    }
+                </script>';
         }
     }
  }

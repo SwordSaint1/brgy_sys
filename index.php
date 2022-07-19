@@ -135,7 +135,7 @@
                <h2 id="date_created'.$j['id'].'" style="text-align:center; color:red;">'.$j['date_announce'].'</h2>
                   <h2 id="content'.$j['id'].'" style="text-align:center;">'.$j['announcement_description'].' 
                   </h2>
-              <hr>
+              <hr style="border: 1px solid">
             </div>';
             }
             ?>

@@ -10,7 +10,7 @@
       <div class="modal-body">
         <form action="../../process/user/send_docs.php"  enctype="multipart/form-data" method="POST">
             <div class="row">
-              <input type="text" name="send_by" id="send_by" value="<?=$fname;?>">
+              <input type="hidden" name="send_by" id="send_by" value="<?=$fname;?>">
               <div class="col-12">
                 <label>File:</label>
                     <input type="file" name="files[]" id ="files" class="form-control-lg" accept="application/pdf" required>
