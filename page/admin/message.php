@@ -1,5 +1,5 @@
 <?php include 'plugins/navbar.php';?>
-<?php include 'plugins/sidebar/recievedbar.php';?>
+<?php include 'plugins/sidebar/messagebar.php';?>
   <!-- Main Sidebar Container -->
 
  <!-- Content Wrapper. Contains page content -->
@@ -9,12 +9,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Sent Document List</h1>
+            <h1 class="m-0">Message List</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
-              <li class="breadcrumb-item active">Sent Document List</li>
+              <li class="breadcrumb-item active">Message List</li>
             </ol>
           </div><!-- /.col -->
         
@@ -38,38 +38,19 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
-
-                  <div class="row">
-                     <div class="col-4">
-                      <label>Date From:</label><input type="date" name="" id="date_sent_docs_date_from" class="form-control" value="<?=$server_date_only;?>">
-                    </div>
-                     <div class="col-4">
-                      <label>Date To:</label><input type="date" name="" id="date_sent_docs_date_to" class="form-control" value="<?=$server_date_only;?>">
-                    </div>      
-                     <div class="col-4">
-                      <span style="visibility:hidden;">.</span>
-                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="search_sent_docs()">Search <i class="fa fa-search"></a></i></p>
-                    </div>
-                  </div>
-              
-                  <br>
-                  <div class="row">
-                    <div class="col-sm-12 col-md-6 col-6">
-                    </div>
-                  </div>
                   <div class="row">
                     <div class="col-12">
                        <div class="card-body table-responsive p-0" style="height: 420px;">
-                <table class="table table-head-fixed text-nowrap table-hover" id="sent_docs_list">
+                <table class="table table-head-fixed text-nowrap table-hover" id="message_list">
                 <thead style="text-align:center;">
                     <th>#</th>
-                    <th>Sent To</th>
-                    <th>Docs</th>
-                    <th>Type of File</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Subject</th>
+                    <th>Message</th>
                     <th>Date Sent</th>
-                    <th>Status</th>
             </thead>
-            <tbody id="list_of_sent_docs" style="text-align:center;"></tbody>
+            <tbody id="list_of_message" style="text-align:center;"></tbody>
                 </table>
               </div>
                     </div>
@@ -91,4 +72,4 @@
 </div>
 
 <?php include 'plugins/footer.php';?>
-<?php include 'plugins/javascript/recieved_script.php';?>
+<?php include 'plugins/javascript/message_script.php';?>

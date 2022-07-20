@@ -358,7 +358,7 @@
          
           <div class="col-lg-7 col-md-12 col-sm-12">
             <div class="contact-block">
-              <form action="" method="POST">
+              <form action="process/message.php" method="POST">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -374,19 +374,19 @@
                   </div>
                    <div class="col-md-12">
                     <div class="form-group">
-                     <label><b>Subject:</b></label> <input type="text" placeholder="Subject" id="msg_subject" class="form-control" required>
+                     <label><b>Subject:</b></label> <input type="text" placeholder="Subject" name="msg_subject" id="msg_subject" class="form-control" required>
                       <div class="help-block with-errors"></div>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group"> 
-                     <label><b>Message:</b></label> <textarea class="form-control" id="message" placeholder="Your Message" rows="7" data-error="Write your message" required></textarea>
+                     <label><b>Message:</b></label> <textarea class="form-control" name="message" id="message" placeholder="Your Message" rows="7" data-error="Write your message" required></textarea>
                       <div class="help-block with-errors"></div>
                      
                     </div>
                     <div class="submit-button text-left">
                       <br>
-                      <button class="btn btn-common" id="form-submit" type="submit">Send Message</button>
+                     <input type="submit" class="btn btn-common" name="submit_btn" value="Send Message">
                       <div id="msgSubmit" class="h3 text-center hidden"></div> 
                       <div class="clearfix"></div> 
                     </div>
@@ -477,23 +477,25 @@
     <script src="assets/js/contact-form-script.min.js"></script>
 
     <script type="text/javascript">
-      var slideIndex = 1;
-showDivs(slideIndex);
+//       var slideIndex = 1;
+// showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
+// function plusDivs(n) {
+//   showDivs(slideIndex += n);
+// }
 
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  x[slideIndex-1].style.display = "block";  
-}
+// function showDivs(n) {
+//   var i;
+//   var x = document.getElementsByClassName("mySlides");
+//   if (n > x.length) {slideIndex = 1}
+//   if (n < 1) {slideIndex = x.length}
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";  
+//   }
+//   x[slideIndex-1].style.display = "block";  
+// }
+
+
     </script>
       
   </body>

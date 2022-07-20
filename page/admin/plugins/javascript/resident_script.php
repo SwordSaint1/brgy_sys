@@ -65,13 +65,15 @@ swal('Information','Please Input Register Voters','info');
 
 const search_resident =()=>{
 	var name = document.getElementById('names').value;
+	var register_voters = document.getElementById('register_votersss').value;
 	$.ajax({
       url: '../../process/admin/resident.php',
                 type: 'POST',
                 cache: false,
                 data:{
                     method: 'fetch_resident',
-                    name:name
+                    name:name,
+                    register_voters:register_voters
                 },success:function(response){
                    document.getElementById('list_of_resident').innerHTML = response;
                 }

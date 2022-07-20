@@ -1,22 +1,22 @@
 <script type="text/javascript">
 
 $(document).ready(function(){
-    search_recieved_docs();
+    search_sent_docs();
 })	
-const search_recieved_docs =()=>{
-	var datefrom  = document.getElementById('date_recieved_date_from').value;
-	var dateto = document.getElementById('date_recieved_date_to').value;
+const search_sent_docs =()=>{
+	var datefrom  = document.getElementById('date_sent_docs_date_from').value;
+	var dateto = document.getElementById('date_sent_docs_date_to').value;
 
 	$.ajax({
-      url: '../../process/user/recieved_docs.php',
+      url: '../../process/admin/sent_docs.php',
                 type: 'POST',
                 cache: false,
                 data:{
-                    method: 'fetch_recieved_docs',
+                    method: 'fetch_sent_docs',
                     datefrom:datefrom,
 					dateto:dateto
                 },success:function(response){
-                   document.getElementById('list_of_recieved_docs').innerHTML = response;
+                   document.getElementById('list_of_sent_docs').innerHTML = response;
                      
                 }
    });

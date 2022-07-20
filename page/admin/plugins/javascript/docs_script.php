@@ -8,7 +8,7 @@ const search_pending_docs =()=>{
 	var dateto = document.getElementById('date_sent_date_to').value;
 
 	$.ajax({
-      url: '../../process/user/pending_docs.php',
+      url: '../../process/admin/pending_docs.php',
                 type: 'POST',
                 cache: false,
                 data:{
@@ -22,47 +22,20 @@ const search_pending_docs =()=>{
    });
 }
 
-const get_docs_details =(param)=>{
+const get_request_details =(param)=>{
     var string = param.split('~!~');
     var id = string[0];
-    var file_name = string[1];
-    var file_type = string[2];
-    var date_sent = string[3];
-    var file = '../../process/user/' + string[4];
-    var send_by = string[5];
-    var status = string[6]; 
+    var requester = string[1];
+    var requested_file = string[2];
+    var date_requested = string[3];
+    var status = string[4];
 
- $('#preview_docs').attr('href',file)
-
-document.getElementById('id_docs').value = id;
-document.getElementById('type_docs').value = file_type;
-document.getElementById('date_sent_update').value = date_sent;
-document.getElementById('prev_docs').value = file_name;
-document.getElementById('sender_update').value = send_by;
-document.getElementById('role_accounts_update').value = status;
+document.getElementById('id_document').value = id;
+document.getElementById('requester_sent').value = requester;
+document.getElementById('requested_file_sent').value = requested_file;
+document.getElementById('date_requested_sent').value = date_requested;
+document.getElementById('sender_update').value = status;
 }
 
-const recieved_docs =()=>{
-    var id = document.getElementById('id_docs').value;
-    var date_recieved = document.getElementById('date_recieved').value;
-    $.ajax({
-        url: '../../process/user/pending_docs.php',
-                type: 'POST',
-                cache: false,
-                data:{
-                    method: 'recieved_docs',
-                    id:id,
-                    date_recieved:date_recieved
-                },success:function(response){
 
-                  if (response == 'success') {
-                    swal('Success','Successfully Recieved!','success');
-                    search_pending_docs();
-                  }else{
-                    swal('Error','Error','error');
-                  }
-                }
-    });
-
-}
 </script>

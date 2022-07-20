@@ -32,13 +32,30 @@
               </p>
             </a>
           </li>
-            <li class="nav-item">
-            <a href="send.php" class="nav-link active">
-              <i class="  fa fa-file-alt"></i>
+           <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="fas fa-file-alt"></i>
               <p>
-                Send Documents
+               Documents
+                <i class="right fas fa-angle-left"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="send.php" class="nav-link active">
+                  <i class="far fa-dot-circle nav-icon"></i>
+              <p>
+                Request Documents
+              </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="view.php" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p>View Documents</p>
+                </a>
+              </li>
+            </ul>
           </li>
             <li class="nav-item">
             <a href="blotter.php" class="nav-link ">

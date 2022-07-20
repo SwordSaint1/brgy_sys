@@ -15,7 +15,7 @@ if ($method == 'add_resident') {
 	$register_voters = $_POST['register_voters'];
 
 
-	$check = "SELECT id FROM resident_details WHERE name = '$name'";
+	$check = "SELECT id FROM resident_details WHERE name = '$name' AND address = '$address' AND date_of_birth = '$date_of_birth' AND age = '$age' AND civil_status = '$civil_status' AND citizenship = '$citizenship' AND occupation = '$occupation' AND register_voters = '$register_voters'";
 	$stmt = $conn->prepare($check);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {
@@ -34,9 +34,10 @@ if ($method == 'add_resident') {
 
 if ($method == 'fetch_resident') {
 	$name = $_POST['name'];
+	$register_voters = $_POST['register_voters'];
 	$c = 0;
 
-	$query = "SELECT * FROM resident_details WHERE name LIKE '$name%'";
+	$query = "SELECT * FROM resident_details WHERE name LIKE '$name%' AND register_voters LIKE '$register_voters%'";
 	$stmt = $conn->prepare($query);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {
@@ -86,7 +87,7 @@ if ($method == 'update_resident') {
 	$occupation = $_POST['occupation'];
 	$register_voters = $_POST['register_voters'];
 
-	$check = "SELECT id FROM resident_details WHERE name = '$name'";
+	$check = "SELECT id FROM resident_details WHERE name = '$name' AND address = '$address' AND date_of_birth = '$date_of_birth' AND age = '$age' AND civil_status = '$civil_status' AND citizenship = '$citizenship' AND occupation = '$occupation' AND register_voters = '$register_voters'";
 	$stmt = $conn->prepare($check);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {

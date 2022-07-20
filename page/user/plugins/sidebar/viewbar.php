@@ -32,8 +32,8 @@
               </p>
             </a>
           </li>
-            <li class="nav-item menu-close">
-            <a href="#" class="nav-link">
+           <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="fas fa-file-alt"></i>
               <p>
                Documents
@@ -42,7 +42,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="send.php" class="nav-link">
+                <a href="send.php" class="nav-link ">
                   <i class="far fa-dot-circle nav-icon"></i>
               <p>
                 Request Documents
@@ -50,15 +50,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="view.php" class="nav-link">
+                <a href="view.php" class="nav-link active">
                   <i class="far fa-dot-circle nav-icon"></i>
-                    <p>View Documents</p>
+                  <p>View Documents</p>
                 </a>
               </li>
             </ul>
           </li>
             <li class="nav-item">
-            <a href="blotter.php" class="nav-link active">
+            <a href="blotter.php" class="nav-link ">
               <i class="fas fa-list"></i>
               <p>
                 List of Blotter

@@ -6,13 +6,24 @@
     $password = $_POST['password'];
     // $role = $_POST['role'];
     if (empty($username)) {
-        echo 'Please Enter Username';
+         echo '<script>
+                    var x = confirm("Please Enter Username!");
+                    if(x == true){
+                        location.replace("login.php");
+                    }else{
+                        location.replace("login.php");
+                    }
+                </script>';
     }else if(empty($password)){
-        echo 'Please Enter Password';
+         echo '<script>
+                    var x = confirm("Please Enter Password!");
+                    if(x == true){
+                        location.replace("login.php");
+                    }else{
+                        location.replace("login.php");
+                    }
+                </script>';
     }
-    // else if(empty($role)){
-    //     echo 'Please Select Role';
-    // }
     else{
 
         $check = "SELECT id,role FROM accounts WHERE BINARY email = '$username' AND BINARY password = '$password'";
@@ -30,9 +41,7 @@
                 $_SESSION['username'] = $username;
                 header('location: page/admin/dashboard.php');    
             }
-        }else{
-            // echo 'Wrong Username or Password';
-     
+        }else{ 
              echo '<script>
                     var x = confirm("Wrong Username or Password!");
                     if(x == true){

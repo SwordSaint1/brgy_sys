@@ -47,8 +47,16 @@
                   <div class="row">
                      <div class="col-3">
                       <label>Name:</label><input type="text" name="" id="names" class="form-control">
+                    </div> 
+                    <div class="col-3">
+                     <label>Voter Status:</label> 
+                  <select id="register_votersss" class="form-control">
+                    <option value="">Select Voter Status</option>
+                    <option value="registered">Registered</option>
+                    <option value="not_registered">Not Registered</option>
+                  </select>
                     </div>        
-                     <div class="col-9">
+                     <div class="col-6">
                       <span style="visibility:hidden;">.</span>
                       <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="search_resident()">Search <i class="fa fa-search"></a></i></p>
                     </div>
@@ -73,7 +81,7 @@
                     <th>Civil Status</th>
                     <th>Citizenship</th>
                     <th>Occupation</th>
-                    <th>Register Voters</th>
+                    <th>Voter Status</th>
             </thead>
             <tbody id="list_of_resident" style="text-align:center;"></tbody>
                 </table>

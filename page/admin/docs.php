@@ -63,10 +63,9 @@
                 <table class="table table-head-fixed text-nowrap table-hover" id="pending_docs_list">
                 <thead style="text-align:center;">
                     <th>#</th>
-                    <th>Sender</th>
-                    <th>Docs</th>
+                    <th>Requester</th>
                     <th>Type of File</th>
-                    <th>Date Sent</th>
+                    <th>Date Requested</th>
                     <th>Status</th>
             </thead>
             <tbody id="list_of_pending_docs" style="text-align:center;"></tbody>

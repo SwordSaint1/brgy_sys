@@ -32,9 +32,25 @@
               </p>
             </a>
           </li>
-            <li class="nav-item menu-close">
+            <li class="nav-item">
+            <a href="resident.php" class="nav-link">
+              <i class="  fa fa-file-alt"></i>
+              <p>
+                Residents Details
+              </p>
+            </a>
+          </li>
+            <li class="nav-item">
+            <a href="blotter.php" class="nav-link">
+              <i class="fas fa-edit"></i>
+              <p>
+                Blotter Details
+              </p>
+            </a>
+          </li>
+           <li class="nav-item menu-close">
             <a href="#" class="nav-link">
-              <i class="fas fa-file-alt"></i>
+              <i class="fas fa-file-pdf"></i>
               <p>
                Documents
                 <i class="right fas fa-angle-left"></i>
@@ -42,26 +58,32 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="send.php" class="nav-link">
+                <a href="docs.php" class="nav-link ">
                   <i class="far fa-dot-circle nav-icon"></i>
-              <p>
-                Request Documents
-              </p>
+                  <p>Pending Documents</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="view.php" class="nav-link">
+                <a href="recieved.php" class="nav-link">
                   <i class="far fa-dot-circle nav-icon"></i>
-                    <p>View Documents</p>
+                   <p>Sent Documents</p>
                 </a>
               </li>
             </ul>
           </li>
-            <li class="nav-item">
-            <a href="blotter.php" class="nav-link active">
-              <i class="fas fa-list"></i>
+          <li class="nav-item">
+            <a href="message.php" class="nav-link active">
+              <i class="fas fa-envelope"></i>
               <p>
-                List of Blotter
+                Message List
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="accounts.php" class="nav-link">
+              <i class="fa fa-users"></i>
+              <p>
+               Account Management              
               </p>
             </a>
           </li>

@@ -66,10 +66,18 @@
               <li class="nav-item">
                 <a href="recieved.php" class="nav-link active">
                   <i class="far fa-dot-circle nav-icon"></i>
-                  <p>Recieved Documents</p>
+                  <p>Sent Documents</p>
                 </a>
               </li>
             </ul>
+          </li>
+           <li class="nav-item">
+            <a href="message.php" class="nav-link">
+              <i class="fas fa-envelope"></i>
+              <p>
+                Message List
+              </p>
+            </a>
           </li>
           <li class="nav-item">
             <a href="accounts.php" class="nav-link">

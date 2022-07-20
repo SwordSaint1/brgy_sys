@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2022 at 06:38 AM
+-- Generation Time: Jul 20, 2022 at 07:32 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -43,7 +43,8 @@ CREATE TABLE `accounts` (
 
 INSERT INTO `accounts` (`id`, `email`, `password`, `full_name`, `address`, `phone_no`, `role`) VALUES
 (1, 'admin@mail.com', 'admin', 'admin', 'admin', '090009', 'admin'),
-(2, 'users@mail.com', 'admins', 'users', 'users', '090123', 'user');
+(2, 'users@mail.com', 'admins', 'users', 'users', '090123', 'user'),
+(5, 'samples@mail.com', 'admins', 'admins', 'admins', '09999132', 'user');
 
 -- --------------------------------------------------------
 
@@ -58,14 +59,6 @@ CREATE TABLE `announcement` (
   `date_announce` date DEFAULT NULL,
   `image` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `announcement`
---
-
-INSERT INTO `announcement` (`id`, `file_name`, `announcement_description`, `date_announce`, `image`) VALUES
-(2, 'UPLOAD-GIN.JPG-20220718-651653-62d4d2f70c4e3.jpg', 'update desc', '2022-07-18', 'upload/UPLOAD-GIN.JPG-20220718-651653-62d4d2f70c4e3.jpg'),
-(3, 'UPLOAD-ANNOUCEMENT.PNG-20220718-101480-62d534ef112', 'sample', '2022-07-18', 'upload/UPLOAD-ANNOUCEMENT.PNG-20220718-101480-62d534ef112d7.png');
 
 -- --------------------------------------------------------
 
@@ -84,13 +77,6 @@ CREATE TABLE `blotter` (
   `location_of_incedence` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `blotter`
---
-
-INSERT INTO `blotter` (`id`, `date_recorded`, `complainant`, `person_to_complaint`, `complaint`, `action_taken`, `status`, `location_of_incedence`) VALUES
-(1, '2022-07-18', 'users', 'b', 'b', 'b', 'pending', 'b');
-
 -- --------------------------------------------------------
 
 --
@@ -104,17 +90,50 @@ CREATE TABLE `documents` (
   `date_sent` date DEFAULT NULL,
   `file` varchar(100) DEFAULT NULL,
   `send_by` varchar(50) DEFAULT NULL,
-  `status` varchar(15) DEFAULT 'pending',
-  `date_recieved` date DEFAULT NULL
+  `send_to` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `subject` varchar(100) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL,
+  `date_sent` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `documents`
+-- Dumping data for table `message`
 --
 
-INSERT INTO `documents` (`id`, `file_name`, `file_type`, `date_sent`, `file`, `send_by`, `status`, `date_recieved`) VALUES
-(1, 'UPLOAD-CV.PDF-20220718-665869-62d52d89d7fa0.pdf', 'barangay_clearance', '2022-07-18', 'upload/UPLOAD-CV.PDF-20220718-665869-62d52d89d7fa0.pdf', 'users', 'recieved', '2022-07-19'),
-(2, 'UPLOAD-TRY.PDF-20220719-633728-62d60f7e13e4d.pdf', 'certificate_of_indigency', '2022-07-19', 'upload/UPLOAD-TRY.PDF-20220719-633728-62d60f7e13e4d.pdf', 'users', 'recieved', '2022-07-19');
+INSERT INTO `message` (`id`, `name`, `email`, `subject`, `message`, `date_sent`) VALUES
+(1, 'a', 'toram5435@gmail.com', 'a', 'a', '2022-07-20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request`
+--
+
+CREATE TABLE `request` (
+  `id` int(50) NOT NULL,
+  `requester` varchar(100) DEFAULT NULL,
+  `requested_file` varchar(50) DEFAULT NULL,
+  `date_requested` date DEFAULT NULL,
+  `status` varchar(20) DEFAULT 'pending',
+  `file_name` varchar(100) DEFAULT NULL,
+  `file_type` varchar(50) DEFAULT NULL,
+  `date_sent` date DEFAULT NULL,
+  `file` varchar(100) DEFAULT NULL,
+  `send_by` varchar(50) DEFAULT NULL,
+  `send_to` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -134,13 +153,6 @@ CREATE TABLE `resident_details` (
   `occupation` varchar(50) DEFAULT NULL,
   `register_voters` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `resident_details`
---
-
-INSERT INTO `resident_details` (`id`, `name`, `address`, `date_of_birth`, `age`, `gender`, `civil_status`, `citizenship`, `occupation`, `register_voters`) VALUES
-(2, 'b', 'a', '2022-07-18', '1', 'male', 'single', 'a', 'a', '1');
 
 --
 -- Indexes for dumped tables
@@ -171,6 +183,18 @@ ALTER TABLE `documents`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `request`
+--
+ALTER TABLE `request`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `resident_details`
 --
 ALTER TABLE `resident_details`
@@ -184,31 +208,43 @@ ALTER TABLE `resident_details`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `announcement`
 --
 ALTER TABLE `announcement`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `blotter`
 --
 ALTER TABLE `blotter`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `documents`
 --
 ALTER TABLE `documents`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `request`
+--
+ALTER TABLE `request`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `resident_details`
 --
 ALTER TABLE `resident_details`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
