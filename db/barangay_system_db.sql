@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2022 at 07:32 AM
+-- Generation Time: Jul 21, 2022 at 09:53 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -108,13 +108,6 @@ CREATE TABLE `message` (
   `date_sent` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `message`
---
-
-INSERT INTO `message` (`id`, `name`, `email`, `subject`, `message`, `date_sent`) VALUES
-(1, 'a', 'toram5435@gmail.com', 'a', 'a', '2022-07-20');
-
 -- --------------------------------------------------------
 
 --
@@ -208,7 +201,7 @@ ALTER TABLE `resident_details`
 -- AUTO_INCREMENT for table `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `announcement`
@@ -232,7 +225,7 @@ ALTER TABLE `documents`
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `request`
