@@ -39,19 +39,20 @@ const search_request =()=>{
 	var datefrom = document.getElementById('date_requested_from').value;
 	var dateto = document.getElementById('date_requested_to').value;
 	var file_type = document.getElementById('requested_files').value;
-    var requester = document.getElementById('viewer').value;
+    var requester = document.getElementById('requester_sent_docs').value;
+    
 	$.ajax({
       url: '../../process/user/request_docs.php',
                 type: 'POST',
                 cache: false,
                 data:{
-                    method: 'fetch_request',
+                    method: 'fetch_pending_request',
                     datefrom:datefrom,
 					dateto:dateto,
 					file_type:file_type,
                     requester:requester
                 },success:function(response){
-                   document.getElementById('list_of_request').innerHTML = response;
+                   document.getElementById('list_of_pending_request').innerHTML = response;
                 }
    });
 }

@@ -56,7 +56,7 @@
                     </div>
                      <div class="col-3">
                       <span style="visibility:hidden;">.</span>
-                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="search_request()">Search <i class="fa fa-search"></a></i></p>
+                      <p style="text-align:right;"><a href="#" class="btn btn-primary" onclick="search_view_docs()">Search <i class="fa fa-search"></a></i></p>
                     </div>
                   </div>
               
@@ -69,7 +69,7 @@
                   <div class="row">
                     <div class="col-12">
                        <div class="card-body table-responsive p-0" style="height: 420px;">
-                <table class="table table-head-fixed text-nowrap table-hover" id="request_list">
+                <table class="table table-head-fixed text-nowrap table-hover" id="docss_list">
                 <thead style="text-align:center;">
                     <th>#</th>
                     <th>Docs</th>
@@ -77,7 +77,7 @@
                     <th>Date Requested</th>
                     <th>Sender</th>
             </thead>
-            <tbody id="list_of_request" style="text-align:center;"></tbody>
+            <tbody id="list_of_docss" style="text-align:center;"></tbody>
                 </table>
               </div>
                     </div>
@@ -99,4 +99,4 @@
 </div>
 
 <?php include 'plugins/footer.php';?>
-<?php include 'plugins/javascript/request_script.php';?>
+<?php include 'plugins/javascript/view_script.php';?>

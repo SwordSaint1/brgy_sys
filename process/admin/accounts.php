@@ -63,7 +63,7 @@ if ($method == 'update_account') {
 	$phone_no = $_POST['phone_no'];
 	$role = $_POST['role'];
 
-	$check = "SELECT id FROM accounts WHERE email = '$email'";
+	$check = "SELECT id FROM accounts WHERE email = '$email' AND full_name = '$full_name' AND address = '$address' AND phone_no = '$phone_no' AND role = '$role'";
 	$stmt = $conn->prepare($check);
 	$stmt->execute();
 	if ($stmt->rowCount() > 0) {

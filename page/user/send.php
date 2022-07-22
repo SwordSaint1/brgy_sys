@@ -43,7 +43,7 @@
               <!-- form start -->
               <form>
                 <div class="card-body">
-    <input type="hidden" name="" id="complainant" value="<?=$fname;?>">
+    <input type="hidden" name="" id="requester_sent_docs" value="<?=$fname;?>">
                   <div class="row">
                     <div class="col-3">
                       <label>Date From:</label><input type="date" name="" id="date_requested_from" class="form-control" value="<?=$server_date_only;?>">
@@ -75,13 +75,13 @@
                   <div class="row">
                     <div class="col-12">
                        <div class="card-body table-responsive p-0" style="height: 420px;">
-                <table class="table table-head-fixed text-nowrap table-hover" id="request_list">
+                <table class="table table-head-fixed text-nowrap table-hover" id="pending_request_list">
                 <thead style="text-align:center;">
                     <th>#</th>
                     <th>Requested File</th>
                     <th>Date Requested</th>
             </thead>
-            <tbody id="list_of_request" style="text-align:center;"></tbody>
+            <tbody id="list_of_pending_request" style="text-align:center;"></tbody>
                 </table>
               </div>
                     </div>
